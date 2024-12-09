@@ -1,6 +1,7 @@
+/* Main page style */
 .login-page {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align to left */
   align-items: center;
   min-height: 100vh;
   background-color: #15c2ed;
@@ -8,33 +9,28 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
-  overflow: hidden;
+  padding: 0 15px;
 }
 
 .login-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 80%;
-  gap: 30px;
+  width: 100%;
+  max-width: 500px;
   margin-bottom: 70px;
   position: relative;
   z-index: 1;
-  
+  padding-left: 120px; 
 }
 
 .login-box {
-  width: 400px;
+  width: 100%;
   padding: 30px;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 40px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-  text-align: left;
   backdrop-filter: blur(10px);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  height: 450px;
-  animation: fadeIn 1s ease-in-out; /* Apply fadeIn animation */
+  height: auto;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .login-box:hover {
@@ -48,7 +44,6 @@
   margin-bottom: 20px;
   font-family: Arial, sans-serif;
   font-weight: 600;
-  transition: color 0.3s ease-in-out;
 }
 
 .login-box input {
@@ -93,10 +88,6 @@
   text-align: center;
 }
 
-.signup-prompt p {
-  margin: 10px 0;
-}
-
 .signup-prompt a {
   color: #007BFF;
   text-decoration: none;
@@ -109,8 +100,7 @@
   transform: scale(1.05);
 }
 
-
-
+/* Keyframe for fade-in animation */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -122,19 +112,37 @@
   }
 }
 
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .login-container {
-    flex-direction: column;
-    gap: 40px;
-    width: 90%;
+    padding-left: 20px; /* Adjust left padding for mobile */
+    width: 100%;
   }
 
   .login-box {
-    max-width: 100%;
-    padding: 25px;
+    padding: 20px;
+    width: 100%;
   }
 
-  .images-container {
-    width: 100%;
+  .login-box h2 {
+    font-size: 22px;
+  }
+
+  .login-box input, .login-box button {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-box h2 {
+    font-size: 20px;
+  }
+
+  .login-box input, .login-box button {
+    font-size: 14px;
+  }
+
+  .signup-prompt a {
+    font-size: 14px;
   }
 }
