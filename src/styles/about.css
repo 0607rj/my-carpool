@@ -1,0 +1,87 @@
+.about-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:url("C:\Users\happy\OneDrive\Desktop\react carpooling\Task-5\carpooling\src\assets\Screenshot 2024-12-06 211426.png") ;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* opacity: 10;; */
+  }
+  
+  .about-container {
+    max-width: 1000px;
+    width: 100%;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 40px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 36px;
+    color: #35aabc;
+    margin-bottom: 20px;
+  }
+  
+  .intro-text {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+  }
+  
+  .about-section {
+    margin-bottom: 30px;
+  }
+  
+  .about-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .about-section p,
+  .about-section ul {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .about-section ul {
+    padding-left: 20px;
+  }
+  
+  .about-section li {
+    margin-bottom: 10px;
+  }
+  
+  .about-section strong {
+    color: #35aabc;
+  }
+  
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 28px;
+    }
+  
+    .intro-text {
+      font-size: 16px;
+    }
+  
+    .about-section h2 {
+      font-size: 24px;
+    }
+  
+    .about-section p,
+    .about-section ul {
+      font-size: 14px;
+    }
+  }
+  

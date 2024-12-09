@@ -1,0 +1,140 @@
+.login-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #15c2ed;
+  background-image: url("C:/Users/happy/OneDrive/Desktop/react carpooling/Task-5/carpooling/src/assets/Desktop - 3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
+  gap: 30px;
+  margin-bottom: 70px;
+  position: relative;
+  z-index: 1;
+  
+}
+
+.login-box {
+  width: 400px;
+  padding: 30px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 40px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  height: 450px;
+  animation: fadeIn 1s ease-in-out; /* Apply fadeIn animation */
+}
+
+.login-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  transition: color 0.3s ease-in-out;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.login-box input:focus {
+  border-color: #007BFF;
+  outline: none;
+  transform: scale(1.05);
+}
+
+.login-box button {
+  width: 100%;
+  padding: 14px;
+  background-color: #727cd9;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.login-box button:hover {
+  background-color: #2cb4e9;
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.signup-prompt {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.signup-prompt p {
+  margin: 10px 0;
+}
+
+.signup-prompt a {
+  color: #007BFF;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-prompt a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    gap: 40px;
+    width: 90%;
+  }
+
+  .login-box {
+    max-width: 100%;
+    padding: 25px;
+  }
+
+  .images-container {
+    width: 100%;
+  }
+}

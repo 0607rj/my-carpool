@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
+
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+
+
+.custom-container {
+    max-width: 700px; /* Adjust the width as per your requirement */
+    margin: 0 auto; /* Center the container horizontally */
+    /* Add more custom styles if needed */
+  }
+  
+  .Typewriter__wrapper {
+    font-size: 5rem;
+    font-weight: 800;
+    color: #4a5568;
+    letter-spacing: -0.025em;
+    line-height: 1.25;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.Typewriter__cursor {
+    font-size: 5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}

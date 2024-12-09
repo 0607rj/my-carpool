@@ -1,0 +1,82 @@
+/* driver-requirements.css */
+
+.driver-requirements-container {
+    background-color:  #c9e8ec;
+    border-radius: 10px;
+    padding: 20px;
+     /* Remove the margin-top to avoid space between the container and any previous sections */
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    height: 450px;
+    
+    
+     /* Ensure no bottom margin */
+}
+.driver-container{
+    margin-top: 100px;
+}
+
+.driver-requirements-section {
+    background-color:  #c9e8ec;
+    margin-bottom: 0;
+     /* Set margin-bottom to 0 to avoid space between sections */
+}
+
+.driver-requirements-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px; /* Reduce bottom margin to make the content closer */
+    font-weight: bold;
+}
+
+.driver-requirements-container p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 10px; /* Reduce bottom margin to make the content closer */
+}
+
+.requirements-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0; /* Remove bottom margin */
+}
+
+.requirements-list li {
+    font-size: 16px;
+    margin-bottom: 5px; /* Reduce bottom margin to avoid large spaces between items */
+    color: #333;
+}
+
+.signup-button-section {
+    text-align: center;
+    margin-top: 20px;
+    background-color:  #c9e8ec;
+    margin: 0; /* Remove default margin */
+  padding: 0;
+  
+}
+
+.signup-button {
+    background-color: #259ba9;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 0; 
+    margin-bottom: 30px;/* Ensure no extra space above the button */
+}
+
+.signup-button:hover {
+    background-color: #d4ade9;
+}
+
+/* Reset margins of the body or parent elements if needed */
+body {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}

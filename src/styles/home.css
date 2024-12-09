@@ -1,0 +1,106 @@
+.home-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: transparent;
+  background-image: url("C:/Users/happy/OneDrive/Desktop/react carpooling/Task-5/carpooling/src/assets/Untitled.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+
+.welcome-container {
+  padding: 40px;
+  
+  /* border-radius: 15px; */
+  color: #14d6f8;
+  width: 40%;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  position: absolute;
+  left: 20px;
+  top: 30%;
+}
+
+
+.welcome-container h1 {
+  font-size: 60px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  font-family: "Arial", sans-serif;
+  color: #19e2f9;
+  animation: slideInDown 1.5s ease-in-out;
+  
+}
+
+
+.welcome-container p {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #48a3cd;
+  animation: slideInUp 1.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-container {
+    width: 80%;
+    padding: 20px;
+  }
+
+  .welcome-container h1 {
+    font-size: 40px;
+  }
+
+  .welcome-container p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-container h1 {
+    font-size: 30px;
+  }
+
+  .welcome-container p {
+    font-size: 16px;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

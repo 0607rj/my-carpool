@@ -1,0 +1,155 @@
+.signup-page {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  background-image: url("C:/Users/happy/OneDrive/Desktop/react carpooling/Task-5/carpooling/src/assets/Desktop - 3.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  position: relative;
+}
+
+.signup-container {
+  display: flex;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding-left: 130px;
+}
+
+.signup-form {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px;
+  /* opacity: 40; */
+  animation: fadeIn 1s forwards; /* Fade in animation */
+  height: 450px;
+}
+
+.signup-form h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  color: #333;
+  transition: color 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.signup-form input {
+  width: 100%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.signup-form input:focus {
+  border-color: #409d43;
+  outline: none;
+  transform: scale(1.05);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.signup-form button {
+  width: 100%;
+  padding: 14px;
+  background-color: #7166c5;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease-in-out;
+  margin-top: 15px;
+}
+
+.signup-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.signup-form button:hover {
+  background-color: #70abc9;
+  transform: scale(1.05);
+}
+
+.signup-form .error-message {
+  color: red;
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInError 1s forwards;
+}
+
+.signup-form .login-prompt {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.signup-form .login-prompt p {
+  margin: 10px 0;
+}
+
+.signup-form .login-prompt a {
+  color: #4CAF50;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.signup-form .login-prompt a:hover {
+  color: #45a049;
+  text-decoration: underline;
+  transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInError {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .signup-page {
+    background-position: top center;
+  }
+
+  .signup-form {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+
+  .signup-container {
+    padding-left: 10px;
+  }
+}
