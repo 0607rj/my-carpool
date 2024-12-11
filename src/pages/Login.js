@@ -1,21 +1,22 @@
+// src/pages/Login.js
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";  
-import { loginUser } from "../api/auth";
-import "../styles/login.css";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Use the login function from context
+import { loginUser } from "../api/auth"; // API call to login
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);  
-  const navigate = useNavigate();  
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+  const { login } = useAuth(); // Get login function from context
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");  
-    setIsLoading(true);  
+    setError("");
+    setIsLoading(true);
 
-    
     if (!email || !password) {
       setError("Email and password are required.");
       setIsLoading(false);
@@ -23,22 +24,21 @@ const Login = () => {
     }
 
     try {
-      const data = await loginUser(email, password); 
-      localStorage.setItem("token", data.token);  
+      const data = await loginUser(email, password); // Assuming this API call returns user data
+      login(data); // Log in using the context function
       console.log("Login successful:", data);
-      navigate("/");  
+      navigate("/"); // Redirect to home or dashboard after login
     } catch (err) {
       setError(err.response?.data?.message || "Login failed! Please try again.");
       console.error("Error during login:", err);
     } finally {
-      setIsLoading(false);  
+      setIsLoading(false);
     }
   };
 
   return (
     <div className="login-page">
       <div className="login-container">
-        {/* Login Form Box */}
         <div className="login-box">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
@@ -60,15 +60,7 @@ const Login = () => {
               {isLoading ? "Logging in..." : "Login"}
             </button>
           </form>
-          {error && <p style={{ color: "red" }}>{error}</p>}  
-          <div className="signup-prompt">
-            <p>
-              Don't have an account? <Link to="/signup">Sign up here</Link>
-            </p>
-            <p>
-              <Link to="/forgot-password">Forgot Password?</Link>
-            </p>
-          </div>
+          {error && <p style={{ color: "red" }}>{error}</p>}
         </div>
       </div>
     </div>

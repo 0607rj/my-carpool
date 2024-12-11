@@ -1,20 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { signupUser } from "../api/auth"; // Ensure this function is correctly implemented
-import "../styles/signup.css"; // Import the CSS file
+import { signupUser } from "../api/auth"; 
+import "../styles/signup.css"; 
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false); // To manage button state
+  const [isLoading, setIsLoading] = useState(false); 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Prevent page reload
-    setError(""); // Clear previous error messages
-    setIsLoading(true); // Disable button during submission
+    e.preventDefault(); 
+    setError(""); 
+    setIsLoading(true); 
 
     // Validation checks
     if (!name || !email || !password) {
@@ -40,15 +40,12 @@ const Signup = () => {
       const data = await signupUser(email, password, name);
       console.log("Signup successful:", data);
 
-      // After successful signup, navigate to OTP verification page
-      // Ensure user data contains the `id`
-      if (data && data.user && data.user.id) {
-        navigate("/verify-otp", { state: { userId: data.user.id } });
-      } else {
-        setError("Signup was successful, but we couldn't retrieve your user ID. Please try again.");
-      }
+    
+      
+      navigate("/verify-otp");
+
     } catch (err) {
-      // Handle API errors
+      
       setError(err.response?.data?.message || "Signup failed! Please try again.");
       console.error("Error during signup:", err);
     } finally {

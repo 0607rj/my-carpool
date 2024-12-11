@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; 
 import axios from 'axios';  
 import "../styles/offerride.css"; 
@@ -17,6 +16,9 @@ const OfferRidePage = () => {
   const navigate = useNavigate();
 
   const locations = ['Akgec', 'Govindpuram', 'Noida Sector 62', 'Noida Sector 18', 'Delhi'];
+
+  // Get the current date in 'YYYY-MM-DD' format
+  const currentDate = new Date().toISOString().split('T')[0];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,17 +39,12 @@ const OfferRidePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
     navigate('/car-verification');  
-
-    
-  
 
     const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
     const apiKey = process.env.REACT_APP_API_KEY;
 
     try {
-      
       const response = await axios.post(`${apiUrl}/api/offer-ride`, formData, {
         headers: {
           'Authorization': `Bearer ${apiKey}`, 
@@ -118,6 +115,7 @@ const OfferRidePage = () => {
             name="date"
             value={formData.date}
             onChange={(e) => setFormData({ ...formData, date: e.target.value })}
+            min={currentDate}  // Setting the minimum date to today
             required
           />
         </div>

@@ -1,4 +1,3 @@
-// RideSearchPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
@@ -47,9 +46,12 @@ const RideSearchPage = () => {
 
     try {
       const response = await axios.post(`${apiUrl}/search`, formData);
-      navigate('/car-list', { state: { ...formData, cars: response.data } });
+      const cars = response.data?.cars || []; // Assuming the API returns a list of cars in `cars` key
+      // Navigate to the CarListPage and pass the cars data through state
+      navigate('/car-list', { state: { cars } });
     } catch (error) {
       console.error('Error while searching rides:', error);
+      alert('An error occurred while searching for rides. Please try again later.');
     }
   };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { verifyOtp } from "../api/auth"; 
 import "../styles/verifyOtp.css"; 
 
@@ -8,14 +8,11 @@ const VerifyOtp = () => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
-  const { userId } = location.state || {}; 
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(""); 
     setIsLoading(true);
-
 
     if (!otp) {
       setError("OTP is required.");
@@ -25,7 +22,7 @@ const VerifyOtp = () => {
 
     try {
       // Call verify OTP API
-      const data = await verifyOtp(userId, otp);
+      const data = await verifyOtp(otp);
       console.log("OTP verification successful:", data);
 
       // Redirect to login page after successful OTP verification
