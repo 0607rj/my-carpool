@@ -40,8 +40,13 @@ const Signup = () => {
       const data = await signupUser(email, password, name);
       console.log("Signup successful:", data);
 
-      // Navigate to login page after successful signup
-      navigate("/login");
+      // After successful signup, navigate to OTP verification page
+      // Ensure user data contains the `id`
+      if (data && data.user && data.user.id) {
+        navigate("/verify-otp", { state: { userId: data.user.id } });
+      } else {
+        setError("Signup was successful, but we couldn't retrieve your user ID. Please try again.");
+      }
     } catch (err) {
       // Handle API errors
       setError(err.response?.data?.message || "Signup failed! Please try again.");

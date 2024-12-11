@@ -1,0 +1,47 @@
+
+.verify-otp-page {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .verify-otp-page h2 {
+    margin-bottom: 20px;
+  }
+  
+  .verify-otp-page input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .verify-otp-page button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .verify-otp-page button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .verify-otp-page .error {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .verify-otp-page .success {
+    color: green;
+    font-size: 14px;
+  }
+  

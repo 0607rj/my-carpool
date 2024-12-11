@@ -1,21 +1,21 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";  // useNavigate to handle redirects
-import { loginUser } from "../api/auth";  // Assuming loginUser function exists
+import { Link, useNavigate } from "react-router-dom";  
+import { loginUser } from "../api/auth";
 import "../styles/login.css";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);  // Added loading state
-  const navigate = useNavigate();  // hook to redirect to another page
+  const [isLoading, setIsLoading] = useState(false);  
+  const navigate = useNavigate();  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");  // Reset the error
-    setIsLoading(true);  // Show loading state
+    setError("");  
+    setIsLoading(true);  
 
-    // Check for empty fields
+    
     if (!email || !password) {
       setError("Email and password are required.");
       setIsLoading(false);
@@ -23,15 +23,15 @@ const Login = () => {
     }
 
     try {
-      const data = await loginUser(email, password);  // Call the login API
-      localStorage.setItem("token", data.token);  // Store token in localStorage
+      const data = await loginUser(email, password); 
+      localStorage.setItem("token", data.token);  
       console.log("Login successful:", data);
-      navigate("/");  // Redirect to the main home page (or another desired route)
+      navigate("/");  
     } catch (err) {
       setError(err.response?.data?.message || "Login failed! Please try again.");
       console.error("Error during login:", err);
     } finally {
-      setIsLoading(false);  // End loading state
+      setIsLoading(false);  
     }
   };
 
@@ -60,7 +60,7 @@ const Login = () => {
               {isLoading ? "Logging in..." : "Login"}
             </button>
           </form>
-          {error && <p style={{ color: "red" }}>{error}</p>}  {/* Show error message */}
+          {error && <p style={{ color: "red" }}>{error}</p>}  
           <div className="signup-prompt">
             <p>
               Don't have an account? <Link to="/signup">Sign up here</Link>

@@ -3,7 +3,6 @@
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: transparent;
   background-image: url("C:/Users/happy/OneDrive/Desktop/react carpooling/Task-5/carpooling/src/assets/Untitled.png");
   background-size: cover;
   background-position: center;
@@ -11,21 +10,16 @@
   text-align: center;
 }
 
-
 .welcome-container {
   padding: 40px;
-  
-  /* border-radius: 15px; */
   color: #14d6f8;
   width: 40%;
   text-align: center;
   animation: fadeIn 1.5s ease-in-out;
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
   position: absolute;
   left: 20px;
   top: 30%;
 }
-
 
 .welcome-container h1 {
   font-size: 60px;
@@ -34,9 +28,7 @@
   font-family: "Arial", sans-serif;
   color: #19e2f9;
   animation: slideInDown 1.5s ease-in-out;
-  
 }
-
 
 .welcome-container p {
   font-size: 24px;
@@ -70,7 +62,6 @@
     font-size: 16px;
   }
 }
-
 
 @keyframes fadeIn {
   from {

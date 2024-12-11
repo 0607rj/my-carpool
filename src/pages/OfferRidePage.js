@@ -1,6 +1,7 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; 
-import axios from 'axios';  // Import axios for HTTP requests
+import axios from 'axios';  
 import "../styles/offerride.css"; 
 
 const OfferRidePage = () => {
@@ -36,27 +37,27 @@ const OfferRidePage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Redirect to the Car Verification page after form submission
-    navigate('/car-verification');  // Adjusted to match the correct route
+    
+    navigate('/car-verification');  
 
-    // Backend API Integration Placeholder
-    // Replace with your backend endpoint and API keys when ready
+    
+  
 
     const apiUrl = process.env.REACT_APP_BACKEND_API_URL;
     const apiKey = process.env.REACT_APP_API_KEY;
 
     try {
-      // Example backend request (currently a placeholder)
+      
       const response = await axios.post(`${apiUrl}/api/offer-ride`, formData, {
         headers: {
-          'Authorization': `Bearer ${apiKey}`,  // If needed, add your API key here
+          'Authorization': `Bearer ${apiKey}`, 
           'Content-Type': 'application/json',
         }
       });
 
-      console.log(response.data);  // Log the response from backend
+      console.log(response.data);  
     } catch (error) {
-      console.error('Error while offering ride:', error);  // Log any errors
+      console.error('Error while offering ride:', error); 
     }
   };
 

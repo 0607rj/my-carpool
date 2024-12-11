@@ -1,80 +1,113 @@
-
-  
-
-.user-selection{
-  height:100vh;
-  width: 100%;
+/* Base Layout */
+.user-selection {
+  display: flex;
   justify-content: center;
   align-items: center;
-  display: flex;
-  background-image: url("C:\Users\happy\OneDrive\Desktop\react carpooling\Task-5\carpooling\src\assets\Desktop - 4 (1).png");
+  height: 100vh;
+  width: 100%;
+  background-image: url("C:/Users/happy/OneDrive/Desktop/react carpooling/Task-5/carpooling/src/assets/Desktop - 4 (1).png");
   background-repeat: no-repeat;
   background-size: cover;
-
 }
 
 .user-selection-container {
-  background-color:#f6f9f9;  
+  background-color: #f6f9f9;
   padding: 40px 20px;
-  border-radius: 8px;
+  border-radius: 50px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px; 
-  margin: 0 auto; 
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
   margin-top: 220px;
-  margin-right:100px ;
+  margin-right: 100px; /* Keep it to the right */
   margin-bottom: 30%;
-  
-  border-radius: 50px;
 }
 
 .user-selection-content h2 {
   font-size: 40px;
   font-weight: bold;
-  
   color: #333;
 }
 
 .user-selection-buttons {
   display: flex;
-  margin-top: 15%;
   flex-direction: column;
-  gap: 30px;  
+  gap: 30px;
+  margin-top: 15%;
 }
 
 .selection-button {
   padding: 15px 25px;
   font-size: 18px;
-  background-color: #82d8f0;  
+  background-color: #82d8f0;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
-  width: 100%;  
-  max-width: 300px; 
-  margin: 0 auto; 
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
 }
 
 .selection-button:hover {
-  background-color: #53bee4;  
-  transform: scale(1.05);  
+  background-color: #53bee4;
+  transform: scale(1.05);
 }
 
 .selection-button:disabled {
-  background-color: #ccc; 
+  background-color: #ccc;
   cursor: not-allowed;
 }
 
-
-@media screen and (max-width: 600px) {
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 1024px) {
   .user-selection-container {
-    padding: 20px;  
+    padding: 20px;
     margin-top: 20px;
+    margin-right: 40px; /* Adjust the right margin for smaller screens */
+  }
+
+  .user-selection-content h2 {
+    font-size: 32px;  /* Adjust font size for medium screens */
   }
 
   .selection-button {
-    font-size: 16px;  
+    font-size: 16px;
     padding: 12px 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .user-selection-container {
+    padding: 15px;
+    margin-top: 15px;
+    margin-right: 20px; /* Adjust the right margin for smaller screens */
+  }
+
+  .user-selection-content h2 {
+    font-size: 28px;  /* Adjust font size for smaller screens */
+  }
+
+  .selection-button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .user-selection-container {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 10px; /* Even smaller margin for very small screens */
+  }
+
+  .user-selection-content h2 {
+    font-size: 24px;  /* Decrease font size for very small screens */
+  }
+
+  .selection-button {
+    font-size: 12px;
+    padding: 8px 12px;
   }
 }

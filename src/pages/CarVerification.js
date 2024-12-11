@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // For sending requests
-import "../styles/car-verification.css"; 
+import axios from 'axios';
+import "../styles/car-verification.css";
 
 const CarVerificationPage = () => {
   const [vehicleDetails, setVehicleDetails] = useState({
+    vehicleType: 'Car',
     vehicleModel: '',
     vehiclePlate: '',
-    location: '',
-    time: '',
+    yearOfPurchase: '',
   });
 
   const handleChange = (e) => {
@@ -18,16 +18,31 @@ const CarVerificationPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const userId = localStorage.getItem('userId'); 
+    if (!userId) {
+      alert("Please login to verify your car.");
+      return;
+    }
+
+    const apiUrl = 'https://task-4-2.onrender.com'; 
+
+    
+    const carData = {
+      vehicleType: vehicleDetails.vehicleType,
+      vehicleModel: vehicleDetails.vehicleModel,
+      vehiclePlate: vehicleDetails.vehiclePlate,
+      yearOfPurchase: vehicleDetails.yearOfPurchase,
+    };
+
     try {
-      // Use environment variable for backend API URL
-      const apiUrl = process.env.REACT_APP_BACKEND_API_URL; // This will be defined in .env file
-      const response = await axios.post(`${apiUrl}/api/verify-car`, vehicleDetails);
-      
+      // Make the request to verify the car
+      const response = await axios.post(`${apiUrl}/verify-car/${userId}`, carData);
       console.log(response.data);
-      alert('Car verification successful!');
+      alert('Car verified successfully!');
+  
     } catch (error) {
-      console.error('Error during car verification:', error);
-      alert('Car verification failed.');
+      console.error('Error while verifying car:', error);
+      alert("Failed to verify car. Please try again.");
     }
   };
 
@@ -61,24 +76,12 @@ const CarVerificationPage = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="location">Location:</label>
+          <label htmlFor="yearOfPurchase">Year of Purchase:</label>
           <input
-            type="text"
-            id="location"
-            name="location"
-            value={vehicleDetails.location}
-            onChange={handleChange}
-            required
-          />
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="time">Time:</label>
-          <input
-            type="time"
-            id="time"
-            name="time"
-            value={vehicleDetails.time}
+            type="number"
+            id="yearOfPurchase"
+            name="yearOfPurchase"
+            value={vehicleDetails.yearOfPurchase}
             onChange={handleChange}
             required
           />

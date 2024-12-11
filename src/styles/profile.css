@@ -1,0 +1,67 @@
+
+
+.profile-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-image img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    margin-top: 20px;
+  }
+  
+  .profile-info p {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .car-info {
+    margin-top: 20px;
+  }
+  
+  .reviews {
+    margin-top: 20px;
+  }
+  
+  .reviews ul {
+    list-style-type: none;
+  }
+  
+  .reviews li {
+    margin: 10px 0;
+  }
+  
+  .buttons {
+    margin-top: 20px;
+  }
+  
+  .edit-profile-btn,
+  .logout-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+  }
+  
+  .edit-profile-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+  }
+  

@@ -9,9 +9,10 @@ import Signup from "./pages/Signup";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import UserSelectionPage from "./pages/UserSelectionPage";
-import OfferRidePage from "./pages/OfferRidePage"; // Import OfferRidePage
+import OfferRidePage from "./pages/OfferRidePage"; 
 import RideSearch from "./pages/RideSearch";  
-import CarVerification from './pages/CarVerification'; // Correct path to CarVerification page
+import CarVerification from './pages/CarVerification'; 
+import VerifyOtp from './pages/VerifyOtp'; 
 
 // Importing components
 import Navbar from "./components/Navbar";
@@ -25,13 +26,13 @@ import './styles/login.css';
 import './styles/signup.css';
 import './styles/forgot-password.css';
 import './styles/reset-password.css';
-import './styles/user-selection.css'; // Correct path to user selection page
+import './styles/user-selection.css'; 
 
 const App = () => {
   const location = useLocation();
 
   // List of routes that shouldn't display the footer
-  const noFooterRoutes = ["/login", "/signup", "/forgot-password" ,"/ridesearch" , "/offer-ride"];
+  const noFooterRoutes = ["/login", "/signup", "/forgot-password", "/ridesearch", "/offer-ride", "/verify-otp/:userId"];
 
   return (
     <>
@@ -45,11 +46,12 @@ const App = () => {
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/user-selection" element={<UserSelectionPage />} />
         <Route path="/offer-ride" element={<OfferRidePage />} />
-        <Route path="/ridesearch" element={<RideSearch />} /> {/* Correct path to RideSearch */}
+        <Route path="/ridesearch" element={<RideSearch />} />
         <Route path="/car-verification" element={<CarVerification />} />
+        <Route path="/verify-otp/:userId" element={<VerifyOtp />} />  
       </Routes>
 
-      {/* Footer will only be shown for non-login routes */}
+  
       {!noFooterRoutes.includes(location.pathname) && <Footer />}
     </>
   );

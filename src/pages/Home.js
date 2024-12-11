@@ -1,15 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
-import "../styles/home.css"; // Ensure you have home.css for styling of the Home page
-import DriverRequirements from "./DriverRequirements"; // Import the DriverRequirements component
-import UserSelectionPage from "./UserSelectionPage"; // Correct import path to UserSelectionPage
+import { useNavigate } from "react-router-dom"; 
+import "../styles/home.css"; // 
+import DriverRequirements from "./DriverRequirements"; 
+import UserSelectionPage from "./UserSelectionPage"; 
 
 const Home = () => {
-  const navigate = useNavigate(); // For navigation to the signup page
+  const navigate = useNavigate(); 
 
-  // Function to navigate to the signup page (optional)
+  
   const handleSignup = () => {
-    navigate("/signup"); // Navigates to the signup route
+    navigate("/signup"); 
   };
 
   return (
@@ -24,19 +24,19 @@ const Home = () => {
       </div>
 
 
-      {/* Displaying UserSelectionPage below */}
+      
       <div className="user-selection">
-        <UserSelectionPage /> {/* Rendering UserSelectionPage component */}
+        <UserSelectionPage /> 
       </div>
 
 
       
-      {/* Displaying the Driver Requirements */}
+    
       <div className="driver-requirements-section">
-        <DriverRequirements /> {/* Displaying driver signup requirements */}
+        <DriverRequirements /> 
       </div>
 
-      {/* Optional Signup Button to navigate to the signup page */}
+      
       <div className="signup-button-section">
         <button onClick={handleSignup} className="signup-button">
           Sign Up as a Driver
