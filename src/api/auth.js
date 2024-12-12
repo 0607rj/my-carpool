@@ -27,6 +27,9 @@ export const signupUser = async (email, password, name) => {
     localStorage.setItem("userToken", userData.token);
     localStorage.setItem("user", JSON.stringify(userData.user)); 
 
+    // Store email in localStorage to be used for OTP verification
+    localStorage.setItem("email", email);
+
     return userData; // Return the user data with token
   } catch (error) {
     console.error("Signup failed:", error.response?.data || error.message);
@@ -34,10 +37,15 @@ export const signupUser = async (email, password, name) => {
   }
 };
 
-// Verify OTP function (no userId needed)
+// Verify OTP function (no userId needed, using email)
 export const verifyOtp = async (otp) => {
+  const email = localStorage.getItem("email"); // Get the email from localStorage
+  if (!email) {
+    throw new Error("Email not found in localStorage. Please sign up first.");
+  }
+
   try {
-    const response = await apiClient.post("/schema/verify-otp", { otp });
+    const response = await apiClient.post("/schema/verify-otp", { email, otp });
     return response.data;  // Return the response data after OTP verification
   } catch (error) {
     console.error("OTP verification failed:", error.response?.data || error.message);
@@ -76,6 +84,7 @@ export const updateUserProfile = async (userData) => {
 export const logoutUser = () => {
   localStorage.removeItem("userToken"); // Clear token from localStorage
   localStorage.removeItem("user"); // Clear user data from localStorage
+  localStorage.removeItem("email"); // Clear email data from localStorage
 };
 
 // Send reset OTP for forgot password

@@ -14,26 +14,29 @@ import RideSearch from "./pages/RideSearch";
 import CarListPage from './pages/CarListPage';
 import CarVerification from './pages/CarVerification';
 import VerifyOtp from './pages/VerifyOtp';
+import Services from "./pages/Services"; 
+import Contact from "./pages/Contact"; 
+import HelpCentre from "./pages/HelpCentre";
 
 // Importing components
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 // Importing styles
-import './styles/global.css';
-import './styles/navbar.css';
-import './styles/footer.css';
-import './styles/login.css';
-import './styles/signup.css';
-import './styles/forgot-password.css';
-import './styles/reset-password.css';
-import './styles/user-selection.css';
+import './styles/global.css';           // Global styles
+import './styles/navbar.css';           // Navbar styles
+import './styles/footer.css';           // Footer styles
+import './styles/login.css';            // Login page styles
+import './styles/signup.css';           // Signup page styles
+import './styles/forgot-password.css';  // Forgot Password page styles
+import './styles/reset-password.css';   // Reset Password page styles
+import './styles/user-selection.css';   // User Selection page styles
 
 // Import Auth functions (ensure these are correctly defined in api/auth.js)
 import { isLoggedIn, getUserFromLocalStorage, logoutUser } from "./api/auth";
 
 // Import AuthContext and AuthProvider
-import { AuthProvider } from './context/AuthContext';  // Ensure this path is correct
+import { AuthProvider } from './context/AuthContext';
 
 const App = () => {
   const [user, setUser] = useState(null);  // To store the logged-in user
@@ -72,12 +75,17 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/services" element={<Services />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/user-selection" element={<UserSelectionPage />} />
         <Route path="/offer-ride" element={<OfferRidePage />} />
         <Route path="/ridesearch" element={<RideSearch />} />
+        <Route path="/help-centre" element={<HelpCentre />} />
+
         <Route path="/car-list" element={<CarListPage />} />
+        <Route path="/contact" element={<Contact />} />
+
         <Route path="/car-verification" element={<CarVerification />} />
         <Route path="/verify-otp" element={<VerifyOtp />} />
       </Routes>
@@ -88,13 +96,13 @@ const App = () => {
   );
 };
 
+// Wrap your app with AuthProvider
 const AppWrapper = () => (
-  <Router>
-    {/* Wrap the app with AuthProvider to provide authentication context */}
-    <AuthProvider>
+  <AuthProvider>
+    <Router>
       <App />
-    </AuthProvider>
-  </Router>
+    </Router>
+  </AuthProvider>
 );
 
 export default AppWrapper;

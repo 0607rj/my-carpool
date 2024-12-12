@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { verifyOtp } from "../api/auth"; 
-import "../styles/verifyOtp.css"; 
+import { verifyOtp } from "../api/auth"; // Assuming you have an API function to verify OTP
+import "../styles/verifyOtp.css";
 
 const VerifyOtp = () => {
-  const [otp, setOtp] = useState("");
-  const [error, setError] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate();
+  const [otp, setOtp] = useState(""); // State to hold OTP input
+  const [error, setError] = useState(""); // State to show error messages
+  const [isLoading, setIsLoading] = useState(false); // Loading state for OTP verification
+  const navigate = useNavigate(); // To navigate after OTP verification
+
+  // Retrieve the email from localStorage (assuming the email is saved after signup or email submission)
+  const email = localStorage.getItem("email");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,13 +23,19 @@ const VerifyOtp = () => {
       return;
     }
 
+    if (!email) {
+      setError("Email is missing. Please try again.");
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      // Call verify OTP API
-      const data = await verifyOtp(otp);
+      // Call the API with email and OTP for verification
+      const data = await verifyOtp(email, otp); // Pass both email and OTP
       console.log("OTP verification successful:", data);
 
       // Redirect to login page after successful OTP verification
-      navigate("/login");
+      navigate("/login"); // Navigate to login page (or wherever you want)
 
     } catch (err) {
       setError(err.response?.data?.message || "OTP verification failed! Please try again.");

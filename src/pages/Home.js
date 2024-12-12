@@ -1,13 +1,14 @@
+// src/pages/Home.js
 import React from "react";
-import { useNavigate } from "react-router-dom"; 
-import "../styles/home.css"; // 
+import { useNavigate } from "react-router-dom";
+import "../styles/home.css"; // Assuming home page styles are in here
 import DriverRequirements from "./DriverRequirements"; 
 import UserSelectionPage from "./UserSelectionPage"; 
+import HelpCentre from "./HelpCentre"; // Import HelpCentre to display it directly
 
 const Home = () => {
   const navigate = useNavigate(); 
 
-  
   const handleSignup = () => {
     navigate("/signup"); 
   };
@@ -23,29 +24,24 @@ const Home = () => {
         </div>
       </div>
 
-
-      
       <div className="user-selection">
         <UserSelectionPage /> 
       </div>
 
-
-      
-    
       <div className="driver-requirements-section">
         <DriverRequirements /> 
       </div>
 
-      
       <div className="signup-button-section">
         <button onClick={handleSignup} className="signup-button">
           Sign Up as a Driver
         </button>
       </div>
 
-
-
-
+      {/* Help Centre Section - Always visible on the page */}
+      <div className="help-centre-container">
+        <HelpCentre />
+      </div>
     </>
   );
 };

@@ -1,0 +1,133 @@
+/* contact.css */
+
+/* Global styles for the contact page */
+.contact-page {
+    font-family: Arial, sans-serif;
+    padding: 40px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Header Section */
+  .contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .contact-header h1 {
+    font-size: 36px;
+    color: #2c3e50;
+  }
+  
+  .contact-header p {
+    font-size: 18px;
+    color: #7f8c8d;
+  }
+  
+  /* Contact Form Section */
+  .contact-form-section {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-form-section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+  }
+  
+  .contact-form textarea {
+    height: 150px;
+  }
+  
+  .contact-form button {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .contact-form button:disabled {
+    background-color: #95a5a6;
+  }
+  
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .success-message {
+    color: green;
+    font-size: 14px;
+  }
+  
+  /* Contact Info Section */
+  .contact-info-section {
+    background-color: #fff;
+    padding: 30px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-info-section h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contact-info-section ul li {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin: 8px 0;
+  }
+  
+  .contact-info-section strong {
+    color: #2980b9;
+  }
+  
+  /* Call to Action Section */
+  .cta-section {
+    text-align: center;
+    background-color: #2980b9;
+    color: #fff;
+    padding: 50px 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  
+  .cta-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  
+  .cta-section a {
+    color: #fff;
+    text-decoration: underline;
+  }
+  

@@ -7,6 +7,10 @@
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: "Poppins", sans-serif;
+  background-image: url("C:\Users\happy\OneDrive\Desktop\react carpooling\Task-5\carpooling\src\assets\Frame 30.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  
 }
 
 .navbar h1 {
@@ -16,6 +20,7 @@
   color: #ffffff;
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   /* font-family: "Poppins","sans-serif"; */
+  margin-left: 50px;
 }
 
 .navbar ul {

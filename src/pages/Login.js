@@ -1,4 +1,3 @@
-// src/pages/Login.js
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext"; // Use the login function from context
@@ -26,6 +25,11 @@ const Login = () => {
     try {
       const data = await loginUser(email, password); // Assuming this API call returns user data
       login(data); // Log in using the context function
+
+      // Save the user data to localStorage to persist the login state
+      localStorage.setItem("user", JSON.stringify(data.user)); // Store user data in localStorage
+      localStorage.setItem("userToken", data.token); // Store token in localStorage
+
       console.log("Login successful:", data);
       navigate("/"); // Redirect to home or dashboard after login
     } catch (err) {
@@ -61,6 +65,20 @@ const Login = () => {
             </button>
           </form>
           {error && <p style={{ color: "red" }}>{error}</p>}
+
+          <div className="signup-prompt">
+            <p>
+              Don't have an account?{" "}
+              <a href="#" onClick={() => navigate("/signup")}>
+                Sign Up Here
+              </a>
+            </p>
+            <p>
+              <a href="#" onClick={() => navigate("/forgot-password")}>
+                Forgot Password?
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

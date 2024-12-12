@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';  // Use useNavigate instead of useHistory
 import "../styles/car-verification.css";
 
 const CarVerificationPage = () => {
@@ -10,6 +11,8 @@ const CarVerificationPage = () => {
     yearOfPurchase: '',
   });
 
+  const navigate = useNavigate(); // Use navigate for redirection
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setVehicleDetails({ ...vehicleDetails, [name]: value });
@@ -18,15 +21,13 @@ const CarVerificationPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const userId = localStorage.getItem('userId'); 
+    const userId = localStorage.getItem('userId');  // Getting userId from localStorage
     if (!userId) {
       alert("Please login to verify your car.");
       return;
     }
 
-    const apiUrl = 'https://task-4-2.onrender.com'; 
-
-    
+    const apiUrl = 'https://task-4-2.onrender.com/vehicle_details';  // API base URL
     const carData = {
       vehicleType: vehicleDetails.vehicleType,
       vehicleModel: vehicleDetails.vehicleModel,
@@ -36,10 +37,13 @@ const CarVerificationPage = () => {
 
     try {
       // Make the request to verify the car
-      const response = await axios.post(`${apiUrl}/verify-car/${userId}`, carData);
+      const response = await axios.post(`${apiUrl}/${userId}`, carData);  // Dynamic userId in the URL
       console.log(response.data);
       alert('Car verified successfully!');
-  
+      
+      // Redirect to the home page after success
+      navigate('/home');  // Using navigate to redirect to home
+
     } catch (error) {
       console.error('Error while verifying car:', error);
       alert("Failed to verify car. Please try again.");
