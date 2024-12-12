@@ -7,7 +7,7 @@
   color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   font-family: "Poppins", sans-serif;
-  background-image: url("../assets/Frame\ 30.png");
+  background-image: url("../assets/Frame\ 31.png");
   background-repeat: no-repeat;
   background-size: contain;
   
@@ -21,6 +21,7 @@
   /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
   /* font-family: "Poppins","sans-serif"; */
   margin-left: 50px;
+  margin-bottom: 5px;
 }
 
 .navbar ul {
