@@ -3,7 +3,7 @@ body{
   
   width: 100%;
   height: 10vh;
-  background-image: url("C:\Users\happy\OneDrive\Desktop\react carpooling\Task-5\carpooling\src\assets\Desktop - 3.png");
+  background-image: url("../assets/login.png");
   background-repeat: no-repeat;
   background-size: cover;
 }

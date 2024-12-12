@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:url("C:\Users\happy\OneDrive\Desktop\react carpooling\Task-5\carpooling\src\assets\Screenshot 2024-12-06 211426.png") ;
+    background-image:url("../assets/about.jpg") ;
     min-height: 100vh;
     padding: 40px 20px;
     background-size: cover;
